@@ -6,7 +6,7 @@ import { ArrowUp } from 'lucide-react'
 const YealySection = () => {
 
   return (
-    <div className="bg-white w-full p-7 rounded-md shadow-md flex flex-col gap-y-5">
+    <div className="bg-card w-full p-7 rounded-md shadow-md flex flex-col gap-y-5">
         <div>
           <h4 className="font-semibold text-black pb-2 tracking-wider">
             Profile Report

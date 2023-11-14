@@ -53,3 +53,25 @@ export async function POST(req , {params}){
         return new NextResponse("Internal Error" , {status : 500})
     }
 }
+
+export async function GET(req ,{params}){
+    try{
+
+
+        if(!params.storeId){
+            return new NextResponse("Store id is required" , {status : 400})
+        }
+
+        const signboards = await Prisma.signboard.findMany({
+            where : {
+                storeId : params.storeId
+            }
+        })
+
+        return NextResponse.json(signboards)
+
+    }catch(err){
+        console.log('[GET_SIGNBOARD_ERROR]' , err);
+        return new NextResponse("Internal Error" , {status : 500})
+    }
+}
